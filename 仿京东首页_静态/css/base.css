@@ -17,10 +17,16 @@ a {    /*链接公共类*/
 a:hover {
     color: #c81623
 }
-ul {
-    list-style: none;
+* {
     margin: 0;
     padding: 0;
+}
+input,button {
+    border: 0;
+    outline: none;  /*取消轮廓边框*/
+}
+ul {
+    list-style: none;
 }
 body {  /*整体背景色调*/
     background-color: #f0f3ef;
@@ -78,12 +84,53 @@ header {
 }
 .mobile img {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: -5px;
+    top: 24px;
+    padding: 2px;
+    border: 1px solid #ccc;
 }
 /* 快速导航栏 over	 */
 
+/* 中间大部分 */
+.middle {
+    height: 140px;
+    position: relative;
+}
+.logo {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    box-shadow: 0 -12px 10px rgba(0,0,0,0.2);
+}
+.logo a {
+    display: block;
+    width: 190px;
+    height: 170px;
+    background: url(../images/logo.png) no-repeat;
+}
 
+.form {
+    width: 550px;
+    height: 35px;
+    background-color: pink;
+    position: absolute;
+    top: 25px;
+    left: 320px;
+}
+/*
+.form input {
+    width: 500px;
+    height: 33px;
+    background-color: skyblue;
+    border: 1px solid #f10215;
+    float: left;
+}
+.form button {
+    width: 50px;
+    height: 35px;
+    background-color: #f10215;
+    float: left;
+} */
 
 
 
