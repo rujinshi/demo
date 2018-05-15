@@ -1,0 +1,42 @@
+
+.w {  /*版心部分*/
+    width: 1190px;   /*版心大小*/
+    margin: 0 auto;
+}
+.fl {  /*浮动的公共类*/
+    float: left;
+}
+.fr {
+    float: right;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+body {  /*整体背景色调*/
+    background-color: #f0f3ef;
+}
+header {  /*header部分*/
+    height: 80px;
+    background-color: #1686f6;
+}
+
+/* 快速导航栏 begin	 */
+.shortcut {
+    background-color: #e3e4e5;
+    line-height: 30px;
+    border-bottom: 2px solid #ddd;
+    font-size: 12px;
+    color: #666;
+}
+.city {  /*北京外边距*/
+    margin-left: 200px;
+}
+
+/* 快速导航栏 over	 */
+
+
+
+
+
