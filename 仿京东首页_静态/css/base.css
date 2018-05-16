@@ -230,7 +230,7 @@ footer {
 .service {
     padding: 30px 0;  /*设置上下padding 自然垂直居中 宽度自然撑开*/
     border-bottom: 1px solid #DEDEDE;
-    overflow: hidden;  /*清除浮动*/
+    overflow: hidden;  /*清除浮动 因为下面插入了浮动的图片*/ 
 }
 .service ul li {
     width: 297px;
@@ -249,8 +249,44 @@ footer {
     background-position: 0 -192px;
     text-indent: -999px;
 }
+.service li:nth-child(2) h5 {
+    background: url(../images/sprite.footer.png) no-repeat;
+    background-position: -41px -192px;
+}
+.service li:nth-child(3) h5 {
+    background: url(../images/sprite.footer.png) no-repeat;
+    background-position: -82px -192px;
+}
+.service li:nth-child(4) h5 {
+    background: url(../images/sprite.footer.png) no-repeat;
+    background-position: -123px -192px;
+}
 .service li p {
     font-weight: 700;
     margin-left: 82px;
     font-size: 18px;
+}
+/* 帮助模块 */
+.help {
+    height: 200px;
+    border-bottom: 1px solid #DEDEDE;
+    padding-top: 25px;
+    box-sizing: border-box;
+
+}
+.help dl {
+    width: 192px;  /*宽度剩余法*/
+    float: left;
+    color: #666;
+
+}
+.help dt {  /*高度剩余法*/
+    height: 22px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: bold;
+}
+.help dd {
+    height: 22px;
 }
