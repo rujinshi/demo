@@ -86,7 +86,7 @@ header {
 }
 .mobile img {
     position: absolute;
-    left: -5px;
+    left: -8px;
     top: 24px;
     padding: 2px;
     border: 1px solid #ccc;
@@ -189,7 +189,7 @@ header {
 }
 /*小导航模块*/
 .navitems {
-    width: 770px;
+    width: 800px;
     height: 40px;
     position: absolute;
     bottom: 0;
@@ -206,4 +206,51 @@ header {
 }
 .navitems li a:hover {
     color: #f10215;
+}
+.navitems .space {  /*小竖线样式*/
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: -15px;
+}
+/* 超级日 */
+.super {
+    position: absolute;
+    width: 190px;
+    height: 40px;
+    bottom: 10px;
+    right: 0;
+}
+
+/* 尾部分 */
+footer {
+    margin-top: 35px;
+    height: 568px;
+    background-color: #EAEAEA;
+}
+.service {
+    padding: 30px 0;  /*设置上下padding 自然垂直居中 宽度自然撑开*/
+    border-bottom: 1px solid #DEDEDE;
+    overflow: hidden;  /*清除浮动*/
+}
+.service ul li {
+    width: 297px;
+    height: 42px;
+    position: relative;
+    line-height: 42px;
+    float: left;
+}
+.service li h5 {
+    position: absolute;
+    top: 0;
+    left: 35px;
+    width: 36px;
+    height: 42px;
+    background: url(../images/sprite.footer.png) no-repeat;
+    background-position: 0 -192px;
+    text-indent: -999px;
+}
+.service li p {
+    font-weight: 700;
+    margin-left: 82px;
+    font-size: 18px;
 }
