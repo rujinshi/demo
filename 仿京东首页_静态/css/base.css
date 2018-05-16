@@ -225,7 +225,7 @@ header {
 footer {
     margin-top: 35px;
     height: 568px;
-    background-color: #EAEAEA;
+    /* background-color: #EAEAEA; */
 }
 .service {
     padding: 30px 0;  /*设置上下padding 自然垂直居中 宽度自然撑开*/
@@ -247,7 +247,7 @@ footer {
     height: 42px;
     background: url(../images/sprite.footer.png) no-repeat;
     background-position: 0 -192px;
-    text-indent: -999px;
+    text-indent: -999em;
 }
 .service li:nth-child(2) h5 {
     background: url(../images/sprite.footer.png) no-repeat;
@@ -279,14 +279,91 @@ footer {
     float: left;
     color: #666;
 
+
 }
 .help dt {  /*高度剩余法*/
     height: 22px;
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 22px;
     font-weight: bold;
+
 }
 .help dd {
     height: 22px;
+}
+/*范围*/
+.coverage {
+    width: 200px;
+    height: 150px;
+    background: url(../images/sprite.footer.png) no-repeat;
+    background-position: 0 0;
+    color: #666;
+
+}
+.coverage h5 {
+    text-align: center;
+    width: 200px;
+    height: 21px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: bold;
+} 
+.coverage p {
+    font-size: 12px;
+    line-height: 18px;
+    width: 180px;
+    height: 53px;
+}
+.coverage a {
+    display: block;
+    width: 180px;
+    height: 18px;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/*版权模块*/
+.copyright {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+.copyright a {
+    color: #666;
+}
+
+.copyright span {
+    margin: 0 10px;
+    color: #ccc;
+}
+.copyright div {
+    padding: 15px 0;
+}
+.copyright div p {
+    line-height: 20px;
+}
+.foot-icon {
+    margin: 35px 0;
+}
+.foot-icon a {
+    display: inline-block;    /*小技巧转换成行内块元素*/
+    width: 103px;
+    height: 32px;
+    background: url(../images/sprite.footer.png) no-repeat -205px -148px;
+    margin: 0 3px;
+}
+.foot-icon a:nth-child(2) {
+    background-position: -205px -111px;
+}
+.foot-icon a:nth-child(3) {
+    background-position: -205px -74px;
+}
+.foot-icon a:nth-child(4) {
+    background-position: -205px -37px;
+}
+.foot-icon a:nth-child(5) {
+    background-position: 0 -155px;
 }
