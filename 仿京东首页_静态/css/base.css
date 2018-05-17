@@ -1,4 +1,7 @@
 
+img {
+    vertical-align: top;
+}
 .w {  /*版心部分*/
     width: 1190px;   /*版心大小*/
     margin: 0 auto;

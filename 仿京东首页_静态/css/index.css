@@ -29,28 +29,59 @@
 }
 .grid-col1 ul {
     padding: 10px 0;
+    /* transition: background-color 1s 0; */
 }
 .grid-col1 ul li {
     padding-left: 14px;
     height: 27px;
     line-height: 27px;
+    transition: background-color .25s ease;  /*hover过渡效果*/
 }
 .grid-col1 ul li:hover {
     background-color: #D9D9D9;
 }
 
-
-
-
-
+/* 第二列 */
 .grid-col2 {
     width: 590px;
-    background-color: purple;
 }
+.grid-col2-t {
+    height: 470px;
+    margin-top: 10px;
+    position: relative;
+}
+/* 箭头部分 */
+.arrow-l,
+.arrow-r {
+    position: absolute;
+    top: 50%;
+    width: 24px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: translateY(-50%);
+}
+.arrow-l:hover, 
+.arrow-r:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.arrow-r {
+    right: 0;
+}
+
+
+
+/* 第三列 */
 .grid-col3 {
-    background-color: skyblue;
 
 }
+.inner {
+    height: 470px;
+}
+.inner div {
+    width: 190px;
+    height: 150px;
+    margin-top: 10px;
+}
 .grid-col4 {
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0.2)
 }
