@@ -1,0 +1,56 @@
+.grid {
+    height: 480px;
+}
+.grid-col1,
+.grid-col2 {
+    height: 100%;
+    margin-right: 10px;
+}
+.grid-col3,
+.grid-col4 {
+    width: 190px;
+    height: 100%;
+}
+.grid-col1 {
+    width: 190px;
+    background-color: #FEFEFE;
+
+}
+.grid-col1 a {
+    font-size: 14px; 
+    color: #626262;
+}
+.grid-col1 a:hover {
+    color: #e33333;
+}
+.grid-col1 span {
+    font-size: 12px;
+    color: #a7a7a7;
+}
+.grid-col1 ul {
+    padding: 10px 0;
+}
+.grid-col1 ul li {
+    padding-left: 14px;
+    height: 27px;
+    line-height: 27px;
+}
+.grid-col1 ul li:hover {
+    background-color: #D9D9D9;
+}
+
+
+
+
+
+.grid-col2 {
+    width: 590px;
+    background-color: purple;
+}
+.grid-col3 {
+    background-color: skyblue;
+
+}
+.grid-col4 {
+    background-color: red;
+}
