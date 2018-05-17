@@ -50,7 +50,7 @@
     margin-top: 10px;
     position: relative;
 }
-/* 箭头部分 */
+/* 轮播图箭头部分 */
 .arrow-l,
 .arrow-r {
     position: absolute;
@@ -59,6 +59,10 @@
     height: 40px;
     background-color: rgba(0, 0, 0, 0.2);
     transform: translateY(-50%);
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    cursor: pointer;
 }
 .arrow-l:hover, 
 .arrow-r:hover {
@@ -66,6 +70,34 @@
 }
 .arrow-r {
     right: 0;
+}
+.grid-col2-t i {
+    font-family: "icomoon";
+    font-style: normal;
+}
+/* 轮播图圆圈部分  */
+.circle {
+    width: 146px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    border-radius: 10px;
+}
+.circle li {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(241, 241, 241,0.5);
+    border-radius: 50%;
+    float: left;
+    margin: 3px;
+    /* cursor: pointer; 鼠标经过变成手 */
+    transition: background-color .25s ease;  /*hover过渡效果*/
+}
+.circle li:hover {
+    background-color: rgb(255, 255, 255);
 }
 
 
