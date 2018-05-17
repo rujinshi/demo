@@ -100,8 +100,6 @@
     background-color: rgb(255, 255, 255);
 }
 
-
-
 /* 第三列 */
 .grid-col3 {
 
@@ -114,6 +112,23 @@
     height: 150px;
     margin-top: 10px;
 }
+/* 第四列 */
 .grid-col4 {
-    background-color: rgba(0, 0, 0, 0.2)
+}
+.login {
+    height: 150px;
+    margin-top: 10px;
+    background-color: #fff;
+}
+.login-inner {
+    height: 78px;
+    padding-top: 62px;
+}
+.news {
+    height: 130px;
+    background-color: purple;
+}
+.expand {
+    height: 190px;
+    background-color: skyblue;
 }
