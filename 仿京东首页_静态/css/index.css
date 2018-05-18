@@ -123,6 +123,39 @@
 .login-inner {
     height: 78px;
     padding-top: 62px;
+    position: relative;
+    text-align: center;
+}
+.user-avatar {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px;
+}
+.user-avatar a {
+    display: block;
+    width: 55px;
+    height: 55px;
+    border: 5px solid #e3e1df;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 3px 6px 25px #c3c3c3;
+}
+.user-show {
+    padding: 0 10px;
+}
+.user-show p {
+    font-size: 12px;
+    line-height: 20px;
+    width: 100%;
+    overflow: hidden;
+    color: #888;
+}
+.user-show p:nth-child(2) a {
+    padding: 0 1px;
+
 }
 .news {
     height: 130px;
