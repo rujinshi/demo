@@ -96,6 +96,9 @@
     /* cursor: pointer; 鼠标经过变成手 */
     transition: background-color .25s ease;  /*hover过渡效果*/
 }
+.circle .current {
+    background-color: #fff;
+}
 .circle li:hover {
     background-color: rgb(255, 255, 255);
 }
@@ -115,6 +118,7 @@
 /* 第四列 */
 .grid-col4 {
 }
+/* 登陆模块  */
 .login {
     height: 150px;
     margin-top: 10px;
@@ -157,11 +161,96 @@
     padding: 0 1px;
 
 }
+.user-profit {
+    height: 25px;
+    margin-top: 12px;
+}
+.user-profit-lk {
+    display: inline-block;
+    margin: 0 5px;
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #e43f3b;
+    border-radius: 13px;
+    box-shadow: 6px 8px 20px rgba(45,45,45,.15);
+    transition: background .4s ease,color .4s ease;
+}
+.user-profit a:hover {
+    background: #e01222;
+    color: #fff
+}
+.user-profit-plus {
+    background-color: #363634;
+    color: #e5d790;
+}
+
+/* 新闻模块  */
 .news {
     height: 130px;
-    background-color: purple;
+    background-color: #fff;
+    position: relative;
+
+
 }
+.news-head {
+    padding-top: 9px;
+    overflow: hidden;
+    /* line-height: 13px; */
+    position: relative;
+}
+.news-head-item {
+    font-size: 12px;
+    color: #333;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-right: 1px solid #dfe0e1;
+}
+.news-last {
+    border-right: none;
+}
+.news-more {
+    position: absolute;
+    right: 12px;
+    top: 13px;
+}
+.active {
+    width: 27px;
+    height: 2px;
+    background-color: #db192b;
+    position: absolute;
+    bottom: 0px;
+    margin-left: 12px;
+}   
+.news-bottom {
+    padding-top: 8px;
+    margin: 0 15px;
+    height: 88px;
+}
+.news-item {
+    line-height: 22px;
+    color: #999;
+}
+/* 服务扩展模块 */
 .expand {
     height: 190px;
-    background-color: skyblue;
+    /* background-color: skyblue; */
+    overflow: hidden;
+}
+.expand ul {
+    width: 195px;
+}
+.expand li {
+    width: 47px;
+    height: 63px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    float: left;
+}
+.expand li a {
+    display: block;
+    padding-top: 15px;
+    text-align: center;
+
 }
