@@ -237,6 +237,7 @@
     height: 190px;
     /* background-color: skyblue; */
     overflow: hidden;
+    background-color: #fff;
 }
 .expand ul {
     width: 195px;
@@ -252,5 +253,45 @@
     display: block;
     padding-top: 15px;
     text-align: center;
+    text-align: center;
 
+}
+.expand li i {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2px;
+    background: url(../images/sprite.expand.png) no-repeat;
+
+}
+.expand li span {
+    height: 22px;
+    line-height: 22px;
+}
+.expand li:nth-child(1) i {
+    background-position: 0 -88px;
+}
+.expand li:nth-child(2) i {
+    background-position: 0 -44px;
+}.expand li:nth-child(3) i {
+    background-position: -44px -88px;
+}.expand li:nth-child(4) i {
+    background-position: -88px 0;
+}.expand li:nth-child(5) i {
+    background-position: -88px -44px;
+}.expand li:nth-child(6) i {
+    background-position: 0 0;
+}.expand li:nth-child(7) i {
+    background-position: -44px -44px;
+}.expand li:nth-child(8) i {
+    background-position: -88px -88px;
+}.expand li:nth-child(9) i {
+    background-position: -132px 0;
+}.expand li:nth-child(10) i {
+    background-position: -132px -44px;
+}.expand li:nth-child(11) i {
+    background-position: -132px -88px;
+}.expand li:nth-child(12) i {
+    background-position: -44px 0;
 }
