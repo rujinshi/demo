@@ -1,6 +1,3 @@
-/**
- * Created by Administrator on 2017-08-18.
- */
 //格式化日期的代码
 
 //根据id获取元素的代码
