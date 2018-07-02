@@ -98,6 +98,6 @@ aBox.onmouseover=function () {  //鼠标进入事件，停止轮播
     clearInterval(timeId);
 };
 aBox.onmouseout=function () {  //鼠标离开，清理定时器开始轮播
-    setInterval(timeId);
-    timeId=clearInterval(clickHandle,2000);
+    clearInterval(timeId);
+    timeId=setInterval(clickHandle,2000);
 };
