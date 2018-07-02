@@ -37,10 +37,7 @@ for (var i = 0; i < aSpan.length; i++) {
     }
 }
 
-//清除定时器
-clearInterval(timeId);
-//调用定时器
-var timeId = setInterval(clickHandle,2000);
+
 
 //右侧焦点，点击切换下一张
 oNext.onclick = clickHandle;
@@ -77,7 +74,10 @@ oPrev.onclick=function () {
         }
     }
 };
-
+//清除定时器
+clearInterval(timeId);
+//调用定时器
+var timeId = setInterval(clickHandle,2000);
 aBox.onmouseover=function () {  //鼠标进入事件，停止轮播
     clearInterval(timeId);
 };
@@ -85,5 +85,3 @@ aBox.onmouseout=function () {  //鼠标离开，清理定时器开始轮播
     clearInterval(timeId);
     timeId=setInterval(clickHandle,2000);
 };
-
-
