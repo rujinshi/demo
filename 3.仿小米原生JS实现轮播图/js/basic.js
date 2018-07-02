@@ -20,6 +20,7 @@ aBanner[0].style.opacity = "1";
 aSpan[0].className = "current";
 var num = 0;
 
+
 //点击小圆点图片相对应进行切换
 for (var i = 0; i < aSpan.length; i++) {
     //获取索引
@@ -40,8 +41,7 @@ for (var i = 0; i < aSpan.length; i++) {
 
 
 //右侧焦点，点击切换下一张
-oNext.onclick = clickHandle;
-function clickHandle() {
+oNext.onclick = function () {
     for (var j = 0; j < aSpan.length; j++) {
         if (aSpan[j].className == "current") {
             aSpan[j].className = "";
@@ -74,14 +74,30 @@ oPrev.onclick=function () {
         }
     }
 };
+
+// 定时器函数
+function clickHandle() {
+    num++;
+    if(num < 6){
+        for(var j = 0 ;j < aSpan.length; j++){
+            aSpan[j].className = "";
+            aBanner[j].style.opacity = "0";
+        }
+        aSpan[num].className = "current";
+        aBanner[num].style.opacity = "1";
+    }else {
+        num = -1;
+    }
+}
 //清除定时器
 clearInterval(timeId);
 //调用定时器
 var timeId = setInterval(clickHandle,2000);
+
 aBox.onmouseover=function () {  //鼠标进入事件，停止轮播
     clearInterval(timeId);
 };
 aBox.onmouseout=function () {  //鼠标离开，清理定时器开始轮播
-    clearInterval(timeId);
-    timeId=setInterval(clickHandle,2000);
+    setInterval(timeId);
+    timeId=clearInterval(clickHandle,2000);
 };
