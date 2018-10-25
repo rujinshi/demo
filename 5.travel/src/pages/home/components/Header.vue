@@ -8,7 +8,7 @@
       输入城市/景点/游玩主题</div>
     <div class="header-right">
       城市
-      <span class="iconfont">&#xe6aa;</span>
+      <span class="iconfont arrow-icon">&#xe6aa;</span>
     </div>
 </div>
 </template>
@@ -19,10 +19,11 @@ export default {
 }
 </script>
 <style scoped lang="stylus">
+  @import '~styles/varibles.styl'
   .header
     display flex
     line-height .86rem
-    background #00bcd4
+    background $bgColor
     color #fff
     .header-left
       width .64rem
@@ -36,6 +37,7 @@ export default {
       line-height .64rem
       margin-top .12rem
       margin-left .2rem
+      padding-left .2rem
       background #fff
       border-radius .1rem
       color #ccc
@@ -43,4 +45,7 @@ export default {
       width 1.24rem
       float right
       text-align center
+      .arrow-icon
+        margin-left -.04rem
+        font-size .24rem
 </style>
