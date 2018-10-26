@@ -8,6 +8,7 @@
   </swiper>
 </div>
 </template>
+
 <script>
 export default {
   name: 'HomeSwiper',
@@ -32,7 +33,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-  .wrapper >>>.swiper-pagination-bullet
+  .wrapper >>> .swiper-pagination-bullet-active
     background #fff !important
   .wrapper
     overflow hidden
@@ -40,7 +41,7 @@ export default {
     height 0
     // 使用百分比无论哪个方向 参照父容器的宽度 实现高度自适应
     // 用于占位 避免闪烁
-    padding-bottom 27%
+    padding-bottom 26.3%
     background #eee
     .swiper-img
       width 100%
