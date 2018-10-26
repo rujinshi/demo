@@ -5,7 +5,7 @@
       <span>猜你喜欢</span>
     </div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" alt="item.title">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -20,28 +20,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_200x200_2039e660.jpg',
-        title: '上海迪士尼乐园',
-        desc: '全球最大的迪士尼城堡',
-        area: '浦东新区'
-      }, {
-        id: '002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_200x200_46052773.jpg',
-        title: '上海杜莎夫人蜡像馆',
-        desc: '听说有吴亦凡喔skr',
-        area: '黄浦区'
-      }, {
-        id: '003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1609/80/8092254b7f5f016ea3.water.jpg_200x200_cd798d39.jpg',
-        title: '上海欢乐谷',
-        desc: '敢上1200米长的木质过山车吗？',
-        area: '松江区'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
