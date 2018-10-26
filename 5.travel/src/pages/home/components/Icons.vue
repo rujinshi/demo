@@ -94,7 +94,7 @@ export default {
         right 0
         bottom 0.44rem
         box-sizing border-box
-        padding 0.1rem
+        padding .1rem
         .icon-img-content
           display  block
           margin 0 auto
