@@ -10,7 +10,6 @@
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
-          <p class="item-area">{{item.area}}</p>
           <button class="item-button">查看详情</button>
         </div>
       </li>
@@ -59,12 +58,6 @@ export default {
         line-height .4rem
         color #ccc
         ellipsis()
-      .item-area
-        position absolute
-        right .24rem
-        color #616161
-        font-size .24rem
-        line-height .4rem
       .item-button
         line-height .44rem
         margin-top .1rem
