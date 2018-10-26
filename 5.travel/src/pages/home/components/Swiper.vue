@@ -33,7 +33,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-  .wrapper >>> .swiper-pagination-bullet-active
+  .wrapper >>>.swiper-pagination-bullet-active
     background #fff !important
   .wrapper
     overflow hidden
