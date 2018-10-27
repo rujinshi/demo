@@ -7,7 +7,7 @@
   <div class="search-content" ref="search" v-show="keyword">
     <ul>
       <li class="search-item border-bottom"
-      v-for="item of list" :key="item.id">
+      v-for="item of list" :key="item.id" @click="handleCityClick(item.name)">
         {{item.name}}
       </li>
 
@@ -60,12 +60,18 @@ export default {
       }, 100)
     }
   },
-  mounted () {
+  methods: {
+    handleCityClick (city) {
+      this.$store.commit('changeCity', city)
+      // 编程式路由
+      this.$router.push('/')
+    },
+    mounted () {
     // 实现搜索下拉列表滚动
-    this.scroll = new BScroll(this.$refs.search)
+      this.scroll = new BScroll(this.$refs.search)
+    }
   }
 }
-
 </script>
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
