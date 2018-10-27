@@ -2,8 +2,17 @@
   <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :cities="cities" :hot="hotCities"></city-list>
-    <city-alphabet :cities="cities"></city-alphabet>
+    <!-- 向子组件传递值 -->
+    <city-list
+    :cities="cities"
+    :hot="hotCities"
+    :letter="letter"
+    ></city-list>
+    <!-- 监听Alphabet组件上传的信息 -->
+    <city-alphabet
+     :cities="cities"
+     @change="handleLetterChange"
+     ></city-alphabet>
   </div>
 </template>
 <script>
@@ -21,9 +30,11 @@ export default {
     CityAlphabet
   },
   data () {
+    // 需要向子组件传递的值
     return {
       cities: {},
-      hotCities: []
+      hotCities: [],
+      letter: ''
     }
   },
   methods: {
@@ -38,6 +49,9 @@ export default {
         this.cities = data.cities
         this.hotCities = data.hotCities
       }
+    },
+    handleLetterChange (letter) {
+      this.letter = letter
     }
   },
   mounted () {
