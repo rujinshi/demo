@@ -18,6 +18,7 @@
 </template>
 <script>
 import BScroll from 'better-scroll'
+import { mapMutations } from 'vuex'
 export default {
   name: 'CitySearch',
   props: {
@@ -62,14 +63,15 @@ export default {
   },
   methods: {
     handleCityClick (city) {
-      this.$store.commit('changeCity', city)
-      // 编程式路由
+      this.changeCity(city)
+      // 编程式路由 跳转首页
       this.$router.push('/')
     },
-    mounted () {
+    ...mapMutations(['changeCity'])
+  },
+  mounted () {
     // 实现搜索下拉列表滚动
-      this.scroll = new BScroll(this.$refs.search)
-    }
+    this.scroll = new BScroll(this.$refs.search)
   }
 }
 </script>
