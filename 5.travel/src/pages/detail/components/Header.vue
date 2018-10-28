@@ -40,7 +40,12 @@ export default {
     }
   },
   activated () {
+    // 全局事件
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    // 对全局事件解绑 优化页面
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
