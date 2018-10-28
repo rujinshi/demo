@@ -58,7 +58,7 @@ export default {
           clearTimeout(this.timer)
         }
         this.timer = setTimeout(() => {
-          // clientY是手指距离屏幕顶端的距离
+          // clientY是触摸目标在视口中的y坐标
           // 79是上面两个蓝色盒子的高度
           const touchY = e.touches[0].clientY - 79
           const index = Math.floor((touchY - this.startY) / 20)
