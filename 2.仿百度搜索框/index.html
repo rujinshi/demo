@@ -171,26 +171,6 @@
     }
 
 
-
-
-    function down() {
-      if (i < size) {
-
-
-        // console.log(`按下键之后 i 是 ${i} 值是${searchResult.childNodes[i].innerText}`)
-        // console.log(`=============`)
-
-      }
-    }
-
-    function up() {
-      if (i >= 0) {
-        // console.log(`按上键之前 i 是 ${i} 值是${searchResult.chiildNodes[i].innerText}`)
-        // console.log(`按上键之后 i 是 ${i} 值是${searchResult.childNodes[i].innerText}`)
-        // console.log(`=============`)
-      }
-    }
-
     function jumpPage() {
       window.open(`https://www.baidu.com/s?word=${encodeURI(searchInput.value)}`);
     }
@@ -207,6 +187,7 @@
     }, false);
 
     var i = 0;
+    var flag = 1;
 
     // 事件委托 监听键盘事件
     bgDiv.addEventListener("keydown", function (e) {
@@ -216,22 +197,38 @@
       };
       // 向下
       if (e.keyCode === 40) {
+        if (flag === 0) {
+          i = i + 2
+        }
+        flag = 1;
         e.preventDefault();
         if (i >= 5) {
-          i = 4
+          i = 0
         }
         if (i < size) {
+          console.log(`触发下键之前i是${i}`)
           searchInput.value = searchResult.childNodes[i++].innerText;
+          console.log(`触发下键之后i是${i}`)
+          console.log(`==============`)
+
+
         }
       };
       // 向上
       if (e.keyCode === 38) {
+        if (flag === 1) {
+          i = i - 2
+          flag = 0
+        }
         e.preventDefault();
-        if (i <= -1) {
-          i = 0
+        if (i <= 0) {
+          i = 4
         }
         if (i > -1) {
-          searchInput.value = searchResult.childNodes[--i].innerText;
+          console.log(`触发上键之前i是${i}`)
+          searchInput.value = searchResult.childNodes[i--].innerText;
+          console.log(`触发上键之后i是${i}`)
+          console.log(`============`)
         }
       };
     }, false);
