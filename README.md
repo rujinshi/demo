@@ -36,13 +36,38 @@ a {
 
 向输入框动态输入时关键词，将当前关键词作为问号参数后面的值，因为要跨域使用百度的接口，所以通过 JSONP 跨域创建 Ajax 请求。回调函数处理返回值。
 
-- 使用 flex 弹性布局
+### 优化
+
+- 使用 flex 布局
 
 - 使用函数节流，控制 JSNOP 跨域请求的频率
 
 - 使用箭头函数处理 setTimeout 中 this 指向问题
 
 - 为了避免注册太多事件，影响内存，对于鼠标点击候选项 li 标签，或键盘上下选择以及回车跳转等一些列事件，利用事件冒泡原理，在最外层大盒子上使用事件委托。
+
+- 由于 Id 是唯一的，因此相比 className 或者 tagName，根据 Id 查找是相对快的，但是上述获取到的结果都是 HTML 集合,该集合始终与底层文档保持连接，效率低下。 querySelector 以及 querySelectorAll，得到的是一个 NodeList，它是一个类数组对象，是不会带来 HTML 集合的问题,但是要考虑兼容性问题。另外，要避免反复查询，可以将 DOM 结点保存到变量中去。
+
+- 尽可能少的去改变 DOM 包括添加，修改，删除。改变 DOM 就会引起浏览器渲染。所以之前动态创建 li 标签并插入到 DOM 中的方式性能是不高的，由于要插入的 li 标签个数不多可能无法体会，如果 li 标签多了就会有卡顿。
+
+  ```js
+  for (let i = 0; i < result.length; i++) {
+    // 动态创建li标签 不推荐
+    var liObj = document.createElement("li");
+    liObj.innerHTML = result[i];
+    searchResult.appendChild(liObj);
+  }
+  ```
+
+  所以改成 innerHTML 的形式：
+
+  ```js
+  var str = "";
+  for (let i = 0; i < result.length; i++) {
+    str += `<li>${result[i]}</li>`;
+  }
+  searchResult.innerHTML = str;
+  ```
 
 ## [3.原生 JS 实现仿小米轮播图](https://github.com/rujinshi/Demo_Front/tree/master/3.%E4%BB%BF%E5%B0%8F%E7%B1%B3%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE)-----[预览效果](http://www.rujinshi.com.cn/Demo_Front/3.%E4%BB%BF%E5%B0%8F%E7%B1%B3%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/index.html)
 
