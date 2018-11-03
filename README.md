@@ -69,7 +69,7 @@ a {
   searchResult.innerHTML = str;
   ```
 
-## [3.原生 JS 实现仿小米轮播图](https://github.com/rujinshi/Demo_Front/tree/master/3.%E4%BB%BF%E5%B0%8F%E7%B1%B3%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE)-----[预览效果](http://www.rujinshi.com.cn/Demo_Front/3.%E4%BB%BF%E5%B0%8F%E7%B1%B3%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/index.html)
+## [3.原生 JS 实现仿小米轮播图--预览效果](http://htmlpreview.github.io/?https://github.com/rujinshi/Demo_Front/blob/banner/3.%E4%BB%BF%E5%B0%8F%E7%B1%B3%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/index.html)
 
 本轮播图非使用移动像素来实现，而是通过设置图片透明度 opacity 来实现。
 
@@ -77,7 +77,7 @@ a {
 - 点击左右焦点和右下角小圆点能实现图片的切换；
 - 设置一个 index 属性，保存索引，注册圆点点击事件。使用了一个全局变量来控制图片的切换和小圆点同步；
 - 排他思想----先清除所有的，再设置当前的；
-- 使用定时器 setInterval 实现每 2 秒自动轮播功能；
+- 使用定时器 setInterval 实现每 3 秒自动轮播功能；
 - 鼠标进入停止轮播，鼠标离开重新开始轮播。
 
 ### 不足
