@@ -4,6 +4,7 @@
     list-style: none;
     border: 0;
 }
+
 /*外面大盒子*/
 .container {
     width: 1226px;
@@ -18,8 +19,8 @@
     top: 0;
     position: absolute;
     overflow: hidden;
-    opacity:0;
-    transition: opacity 2s;
+    opacity: 0;
+    transition: opacity 3s;
 }
 
 /*左右焦点*/
@@ -32,39 +33,43 @@
     text-align: center;
     line-height: 69px;
     font-size: 35px;
-    color: rgba(255,255,200,0.6);
+    color: rgba(255, 255, 200, 0.6);
     font-family: Arial;
     font-weight: normal;
     cursor: pointer;
 }
+
 #arr span:hover {
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
+
 #arr #right {
     right: 0;
 }
+
 /*小圆点*/
 .tab {
     position: absolute;
     bottom: 4px;
     right: 10px;
 }
+
 .tab span {
     display: inline-block;
     width: 6px;
     height: 6px;
     margin: 3px;
-    background:rgba(105,105,105,0.5);
-    border-radius:50%;
+    background: rgba(105, 105, 105, 0.5);
+    border-radius: 50%;
     cursor: pointer;
-    border:2px solid #887B6E;
+    border: 2px solid #887B6E;
     top: 50%;
 }
+
 .tab span.current {
-    background:#E2CEB7;
+    background: #E2CEB7;
 }
 
 .tab span:hover {
-    background:#E2CEB7;
+    background: #E2CEB7;
 }
-

@@ -45,27 +45,27 @@ oNext.onclick = function () {
     for (var j = 0; j < aSpan.length; j++) {
         if (aSpan[j].className == "current") {
             aSpan[j].className = "";
-            aBanner[j].style.opacity="0";
+            aBanner[j].style.opacity = "0";
             j++;
             num++;
-            if (j>5){
-                j=0;
+            if (j > 5) {
+                j = 0;
             }
-            aSpan[j].className="current";
-            aBanner[j].style.opacity="1";
+            aSpan[j].className = "current";
+            aBanner[j].style.opacity = "1";
         }
     }
 };
 
 //左侧焦点，点击切换上一张
-oPrev.onclick=function () {
-    for(var j = 0 ;j < aSpan.length; j++){
-        if(aSpan[j].className == "current"){
+oPrev.onclick = function () {
+    for (var j = 0; j < aSpan.length; j++) {
+        if (aSpan[j].className == "current") {
             aSpan[j].className = "";
             aBanner[j].style.opacity = "0";
             j--;
             num--;
-            if(j < 0){
+            if (j < 0) {
                 j = 5;
             }
             aSpan[j].className = "current";
@@ -78,26 +78,26 @@ oPrev.onclick=function () {
 // 定时器函数
 function clickHandle() {
     num++;
-    if(num < 6){
-        for(var j = 0 ;j < aSpan.length; j++){
+    if (num < 6) {
+        for (var j = 0; j < aSpan.length; j++) {
             aSpan[j].className = "";
             aBanner[j].style.opacity = "0";
         }
         aSpan[num].className = "current";
         aBanner[num].style.opacity = "1";
-    }else {
+    } else {
         num = -1;
     }
 }
 //清除定时器
 clearInterval(timeId);
 //调用定时器
-var timeId = setInterval(clickHandle,2000);
+var timeId = setInterval(clickHandle, 3000);
 
-aBox.onmouseover=function () {  //鼠标进入事件，停止轮播
+aBox.onmouseover = function () { //鼠标进入事件，停止轮播
     clearInterval(timeId);
 };
-aBox.onmouseout=function () {  //鼠标离开，清理定时器开始轮播
+aBox.onmouseout = function () { //鼠标离开，清理定时器开始轮播
     clearInterval(timeId);
-    timeId=setInterval(clickHandle,2000);
+    timeId = setInterval(clickHandle, 3000);
 };
