@@ -43,6 +43,8 @@ window.jQuery = $;
   }
   var Win = $(window)
   var Doc = $(document)
+  var readerModel
+  var readerUI
   var RootContainer = $('#fition_container')
   // 初始化阅读器字体大小
   var inintFontSize = Util.StorageGetter('font_size')
@@ -55,8 +57,8 @@ window.jQuery = $;
 
   // 项目的入口函数
   function main() {
-    var readerModel = ReaderModel()
-    var readerUI = ReaderBaseFrame(RootContainer)
+    readerModel = ReaderModel()
+    readerUI = ReaderBaseFrame(RootContainer)
     readerModel.init(function (data) {
       readerUI(data)
     })
@@ -66,7 +68,9 @@ window.jQuery = $;
 
   function ReaderModel() {
     // 与服务器交互数据
+    // 内部的全局变量
     var Chapter_id
+    var ChapterTotal
     var init = function (UIcallback) {
       getFictionInfo(function () {
         getCurChapterContent(Chapter_id, function (data) {
@@ -79,8 +83,12 @@ window.jQuery = $;
     // 获取章节id
     var getFictionInfo = function (callback) {
       $.get('data/chapter.json', function (data) {
-        // 获得章节id
-        Chapter_id = data.chapters[1].chapter_id
+        // 获得章节信息之后的回调
+        Chapter_id = Util.StorageGetter('last_chapter_id')
+        if (!Chapter_id) {
+          Chapter_id = data.chapters[1].chapter_id
+        }
+        ChapterTotal = 4
         // console.log(Chapter_id)
         // 获得章节id之后的回调
         callback && callback();
@@ -100,13 +108,41 @@ window.jQuery = $;
         }
       }, 'json')
     };
+
+    // 获得上一章内容
+    var prevChapter = function (UIcallback) {
+      Chapter_id = parseInt(Chapter_id, 10)
+      if (Chapter_id === 1) {
+        alert('我可是有上限~')
+        return;
+      }
+      Chapter_id -= 1
+      getCurChapterContent(Chapter_id, UIcallback)
+      Util.StorageSetter('last_chapter_id', Chapter_id)
+    };
+
+    // 获得下一章内容
+    var nextChapter = function (UIcallback) {
+      Chapter_id = parseInt(Chapter_id, 10)
+      if (Chapter_id === ChapterTotal) {
+        alert('我可是有底线的~')
+        return;
+      }
+      Chapter_id += 1
+      getCurChapterContent(Chapter_id, UIcallback)
+      Util.StorageSetter('last_chapter_id', Chapter_id)
+    };
+
+
     return {
-      init
+      init,
+      prevChapter,
+      nextChapter
     }
   };
 
   function ReaderBaseFrame(container) {
-    // 渲染基本的UI结构
+    //渲染基本的UI结构
     function parseChapterData(jsonData) {
       var jsonObj = JSON.parse(jsonData)
       var html = `<h4>${jsonObj.t}</h4>`
@@ -117,16 +153,11 @@ window.jQuery = $;
     };
 
     return function (data) {
-      RootContainer.html(parseChapterData(data))
+      container.html(parseChapterData(data))
     };
-
-
-
   };
 
   function EventHanlder() {
-
-
     // 唤出字体面板
     Dom.font_button.click(function () {
       if (Dom.font_container.css('display') == 'none') {
@@ -151,7 +182,7 @@ window.jQuery = $;
         return;
       }
       inintFontSize += 1
-      console.log(inintFontSize)
+      // console.log(inintFontSize)
       RootContainer.css('font-size', inintFontSize)
       // 存入localStorage
       Util.StorageSetter('font_size', inintFontSize)
@@ -168,10 +199,6 @@ window.jQuery = $;
       // 存入localStorage
       Util.StorageSetter('font_size', inintFontSize)
     });
-
-
-
-
 
     // 屏幕滚动隐藏上下边栏
     Win.scroll((function () {
@@ -193,6 +220,21 @@ window.jQuery = $;
         Dom.font_button.removeClass('current')
       }
     });
+
+    // 上一章
+    $('#prev_button').click(function () {
+      readerModel.prevChapter(function (data) {
+        readerUI(data)
+      })
+    });
+
+    // 下一章
+    $('#next_button').click(function () {
+      readerModel.nextChapter(function (data) {
+        readerUI(data)
+      })
+    });
+
 
 
 
