@@ -1,7 +1,7 @@
 window.jQuery = $;
 (function () {
   var Util = (function () {
-    // 增加一个前缀
+    // 前缀  避免重名
     var prefix = 'html5_reader_';
     var StorageGetter = function (key) {
       return localStorage.getItem(prefix + key);
@@ -9,7 +9,26 @@ window.jQuery = $;
     var StorageSetter = function (key, val) {
       return localStorage.setItem(prefix + key, val)
     }
+
+    // JSONP跨域封装
+    var getBSONP = function (url, callback) {
+      return $.jsonp({
+        url: url,
+        cache: true,
+        callback: 'duokan_fiction_chapter',
+        success: function (result) {
+          // debugger
+          // 解码
+          var data = $.base64.decode(result)
+          var json = decodeURIComponent(escape(data))
+          callback(json)
+        }
+      })
+    };
+
+
     return {
+      getBSONP,
       StorageGetter,
       StorageSetter
     }
@@ -34,19 +53,75 @@ window.jQuery = $;
   RootContainer.css('font-size', inintFontSize)
 
 
-
+  // 项目的入口函数
   function main() {
-    // 整个项目的入口函数
+    var readerModel = ReaderModel()
+    var readerUI = ReaderBaseFrame(RootContainer)
+    readerModel.init(function (data) {
+      readerUI(data)
+    })
     EventHanlder()
   };
 
 
   function ReaderModel() {
-    // 实现和阅读器相关的数据交互的方法
+    // 与服务器交互数据
+    var Chapter_id
+    var init = function (UIcallback) {
+      getFictionInfo(function () {
+        getCurChapterContent(Chapter_id, function (data) {
+          //TODO
+          UIcallback && UIcallback(data)
+        })
+      })
+    }
+
+    // 获取章节id
+    var getFictionInfo = function (callback) {
+      $.get('data/chapter.json', function (data) {
+        // 获得章节id
+        Chapter_id = data.chapters[1].chapter_id
+        // console.log(Chapter_id)
+        // 获得章节id之后的回调
+        callback && callback();
+      }, 'json')
+    };
+
+    // 根据章节的id获取章节内容
+    var getCurChapterContent = function (chapter_id, callback) {
+      $.get('data/data' + chapter_id + '.json', function (data) {
+        if (data.result === 0) {
+          var url = data.jsonp
+          // 跨域JSONP请求
+          Util.getBSONP(url, function (data) {
+            // debugger
+            callback && callback(data)
+          })
+        }
+      }, 'json')
+    };
+    return {
+      init
+    }
   };
 
-  function ReaderBaseFrame() {
+  function ReaderBaseFrame(container) {
     // 渲染基本的UI结构
+    function parseChapterData(jsonData) {
+      var jsonObj = JSON.parse(jsonData)
+      var html = `<h4>${jsonObj.t}</h4>`
+      for (var i = 0, len = jsonObj.p.length; i < len; i++) {
+        html += `<p>${jsonObj.p[i]}</p>`
+      }
+      return html
+    };
+
+    return function (data) {
+      RootContainer.html(parseChapterData(data))
+    };
+
+
+
   };
 
   function EventHanlder() {

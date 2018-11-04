@@ -137,7 +137,7 @@
         this.timer = setTimeout(() => {
           // 创建script标签JSONP跨域
           var script = document.createElement("script");
-          script.src = "https://www.baidu.com/su?&wd=" + encodeURI(this.value.trim()) +
+          script.src = "https://www.baidu.com/su?&wd=" + encodeURIComponent(this.value.trim()) +
             "&p=3&cb=handleSuggestion";
           document.body.appendChild(script);
         }, 60)
@@ -176,7 +176,7 @@
 
 
     function jumpPage() {
-      window.open(`https://www.baidu.com/s?word=${encodeURI(searchInput.value)}`);
+      window.open(`https://www.baidu.com/s?word=${encodeURIComponent(searchInput.value)}`);
     }
 
     // 事件委托 点击li标签或者点击搜索按钮跳转到百度搜索页面
