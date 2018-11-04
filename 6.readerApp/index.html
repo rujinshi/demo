@@ -11,8 +11,11 @@
 
 <body>
 	<div id="root" class="container">
+		<div class="m-artical-action">
+			<div class="artical-action-mid" id="action_mid"></div>
+		</div>
 		<!-- 上边栏 -->
-		<div id="top-nav" class="top-nav">
+		<div id="top-nav" class="top-nav" style="display:none">
 			<div class="icon-back"></div>
 			<div class="nav-title">返回书架</div>
 		</div>
@@ -60,8 +63,8 @@
 
 		<!-- 底部上半部分 -->
 		<!-- 背景色 -->
-		<div class="top-nav-pannel-bk"></div>
-		<div class="top-nav-pannel" id="font-container">
+		<div class="top-nav-pannel-bk font-container" style="display:none"></div>
+		<div class="top-nav-pannel font-container" id="font-container" style="display:none">
 			<div class="child-mod">
 				<span>字号</span>
 				<button id="large-font" class="font-size-button">
@@ -81,9 +84,9 @@
 
 		<!-- 底部下半部分 -->
 		<!-- 背景色 -->
-		<div class="bottom-nav-bk"></div>
+		<div class="bottom-nav-bk bottom_nav" style="display:none"></div>
 
-		<div class="bottom-nav">
+		<div class="bottom-nav bottom_nav" style="display:none">
 			<div class="item menu-button" id="menu_button">
 				<div class="item-warp">
 					<div class="icon-menu"></div>
