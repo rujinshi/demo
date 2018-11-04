@@ -24,6 +24,16 @@ window.jQuery = $;
   }
   var Win = $(window)
   var Doc = $(document)
+  var RootContainer = $('#fition_container')
+  // 初始化阅读器字体大小
+  var inintFontSize = Util.StorageGetter('font_size')
+  inintFontSize = parseInt(inintFontSize)
+  if (!inintFontSize) {
+    inintFontSize = 14
+  }
+  RootContainer.css('font-size', inintFontSize)
+
+
 
   function main() {
     // 整个项目的入口函数
@@ -40,7 +50,62 @@ window.jQuery = $;
   };
 
   function EventHanlder() {
-    // 交互事件的绑定
+
+
+    // 唤出字体面板
+    Dom.font_button.click(function () {
+      if (Dom.font_container.css('display') == 'none') {
+        Dom.font_container.show()
+        Dom.font_button.addClass('current')
+      } else {
+        Dom.font_container.hide()
+        Dom.font_button.removeClass('current')
+
+      }
+    });
+
+
+    $('#night_button').click(function () {
+      // 触发背景切换的事件
+
+    })
+
+    // 字体放大
+    $('#large-font').click(function () {
+      if (inintFontSize > 19) {
+        return;
+      }
+      inintFontSize += 1
+      console.log(inintFontSize)
+      RootContainer.css('font-size', inintFontSize)
+      // 存入localStorage
+      Util.StorageSetter('font_size', inintFontSize)
+
+    });
+
+    // 字体缩小
+    $('#small-font').click(function () {
+      if (inintFontSize < 12) {
+        return;
+      }
+      inintFontSize -= 1
+      RootContainer.css('font-size', inintFontSize)
+      // 存入localStorage
+      Util.StorageSetter('font_size', inintFontSize)
+    });
+
+
+
+
+
+    // 屏幕滚动隐藏上下边栏
+    Win.scroll((function () {
+      Dom.top_nav.hide()
+      Dom.bottom_nav.hide()
+      Dom.font_container.hide()
+      Dom.font_button.removeClass('current')
+    }));
+
     // 点击屏幕中间唤出上下边栏
     $('#action_mid').click(function () {
       if (Dom.top_nav.css('display') == 'none') {
@@ -53,35 +118,6 @@ window.jQuery = $;
         Dom.font_button.removeClass('current')
       }
     });
-    // 唤出字体面板
-    Dom.font_button.click(function () {
-      if (Dom.font_container.css('display') == 'none') {
-        Dom.font_container.show()
-        Dom.font_button.addClass('current')
-      } else {
-        Dom.font_container.hide()
-        Dom.font_button.removeClass('current')
-
-      }
-    })
-
-
-    $('#night_button').click(function () {
-      // 触发背景切换的事件
-
-    })
-
-
-
-
-
-    // 滚动隐藏上下边栏 字体栏
-    Win.scroll((function () {
-      Dom.top_nav.hide()
-      Dom.bottom_nav.hide()
-      Dom.font_container.hide()
-      Dom.font_button.removeClass('current')
-    }))
 
 
 
