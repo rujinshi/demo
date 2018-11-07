@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>float实现三栏布局</title>
+  <style>
+    html body {
+      height: 100%;
+      margin: 0;
+      top: 0;
+    }
+
+    .left {
+      width: 200px;
+      background: red;
+      float: left;
+      height: 200px;
+    }
+
+    .right {
+      width: 200px;
+      background: red;
+      float: right;
+      height: 200px;
+    }
+
+    .center {
+      height: 200px;
+      background-color: aqua;
+    }
+
+    .center-son {
+      background-color: bisque
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">左</div>
+    <div class="center">
+      中间部分 float实现三栏布局
+    </div>
+    <div class="right">右</div>
+
+  </div>
+</body>
+
+</html>
