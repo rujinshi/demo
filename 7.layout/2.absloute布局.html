@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>float实现三栏布局</title>
+  <title>absloute实现三栏布局</title>
   <style>
     html body {
       height: 100%;
@@ -13,23 +13,34 @@
       top: 0;
     }
 
+    .container {
+      position: relative;
+    }
+
+    .container div {
+      position: absolute;
+    }
+
     .left {
       width: 200px;
       height: 200px;
+      left: 0;
       background: red;
-      float: left;
+
     }
 
     .right {
       width: 200px;
       height: 200px;
       background: red;
-      float: right;
+      right: 0;
     }
 
     .center {
       height: 200px;
       background-color: aqua;
+      left: 200px;
+      right: 200px;
     }
   </style>
 </head>
@@ -39,7 +50,7 @@
     <div class="left">左</div>
     <div class="right">右</div>
     <div class="center">
-      中间部分 float实现三栏布局
+      中间部分 absloute实现三栏布局
     </div>
 
   </div>
