@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flex实现圣杯布局</title>
+  <style>
+    html,
+    body {
+      /* 整个页面的布局 */
+      display: flex;
+      flex-direction: column;
+      /* 头、中部、尾纵向显示 */
+      height: 100%;
+      min-height: 600px;
+      font-size: 20px;
+    }
+
+    header,
+    footer {
+      height: 100px;
+      background: #666
+    }
+
+    .container {
+      /* 控制 左 中 右 */
+      display: flex;
+      /* 在垂直方向上 自己占满中部空间 */
+      flex: 1;
+    }
+
+    main {
+      flex: 1;
+      background: palegoldenrod;
+    }
+
+    nav,
+    aside {
+      width: 100px;
+      background: paleturquoise;
+    }
+
+    nav {
+      /* 将nav拉到main的左边去 */
+      order: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <header>header</header>
+  <div class="container">
+    <main>main</main>
+    <nav>nav</nav>
+    <aside>aside</aside>
+  </div>
+  <footer>footer</footer>
+
+</body>
+
+</html>
