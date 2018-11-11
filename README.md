@@ -69,7 +69,7 @@ a {
   searchResult.innerHTML = str;
   ```
 
-## [3.原生 JS 实现仿小米轮播图--预览效果](http://htmlpreview.github.io/?https://github.com/rujinshi/Demo_Front/blob/banner/3.%E4%BB%BF%E5%B0%8F%E7%B1%B3%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/index.html)
+## [3.原生 JS 实现轮播图--预览效果](http://htmlpreview.github.io/?https://github.com/rujinshi/Demo_Front/blob/banner/3.%E4%BB%BF%E5%B0%8F%E7%B1%B3%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/index.html)
 
 本轮播图非使用移动像素来实现，而是通过设置图片透明度 opacity 来实现。
 
@@ -84,6 +84,6 @@ a {
 
 - 刚开始加载时会出现一种乱码的感觉-----可能跟图片大小有关。本地端预览时不会出现这样的状况。
 
-## [4.响应式布局的 P2P 网站]()
+## [4.响应式布局的 P2P 网站--预览效果](https://github.com/rujinshi/Demo_Front/blob/master/4.%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E7%9A%84P2P%E7%BD%91%E7%AB%99/index.html)
 
 通过 CSS3 中的[媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)实现三端适配的仿 P2P 金融网站
