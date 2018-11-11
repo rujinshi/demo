@@ -84,6 +84,6 @@ a {
 
 - 刚开始加载时会出现一种乱码的感觉-----可能跟图片大小有关。本地端预览时不会出现这样的状况。
 
-## [4.实现响应式布局的仿 P2P 网站]()
+## [4.响应式布局的 P2P 网站]()
 
-通过 CSS3 中的[媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)来实现一个多端适配的仿 P2P 金融网站
+通过 CSS3 中的[媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)实现三端适配的仿 P2P 金融网站
