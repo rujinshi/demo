@@ -1,6 +1,6 @@
 # 学习过程中的 DEMO
 
-## [1.仿京东首页](https://github.com/rujinshi/Demo_Front/tree/master/1.%E4%BB%BF%E4%BA%AC%E4%B8%9C%E9%A6%96%E9%A1%B5_%E9%9D%99%E6%80%81)-----[预览效果](http://www.rujinshi.com.cn/Demo_Front//1.%E4%BB%BF%E4%BA%AC%E4%B8%9C%E9%A6%96%E9%A1%B5_%E9%9D%99%E6%80%81/index.html)
+## [1.仿京东首页]-----[预览效果](https://htmlpreview.github.io/?https://github.com/rujinshi/Demo_Front/blob/master/1.%E4%BB%BF%E4%BA%AC%E4%B8%9C%E9%A6%96%E9%A1%B5_%E9%9D%99%E6%80%81/index.html#)
 
 此 DEMO 为初接触 H5+CSS 做的仿京东首页，由于技术栈的限制，此页面为静态页面。通过此 DEMO 对以下知识点加深了认识：
 
