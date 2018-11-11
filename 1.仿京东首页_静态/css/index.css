@@ -43,7 +43,8 @@
     padding-left: 14px;
     height: 27px;
     line-height: 27px;
-    transition: background-color .25s ease; /*hover过渡效果*/
+    transition: background-color .25s ease;
+    /*hover过渡效果*/
 }
 
 .grid-col1 ul li:hover {
@@ -110,7 +111,8 @@
     float: left;
     margin: 3px;
     /* cursor: pointer; 鼠标经过变成手 */
-    transition: background-color .25s ease; /*hover过渡效果*/
+    transition: background-color .25s ease;
+    /*hover过渡效果*/
 }
 
 .circle .current {
@@ -122,9 +124,7 @@
 }
 
 /* 第三列 */
-.grid-col3 {
-
-}
+.grid-col3 {}
 
 .inner {
     height: 470px;
@@ -137,8 +137,7 @@
 }
 
 /* 第四列 */
-.grid-col4 {
-}
+.grid-col4 {}
 
 /* 登陆模块  */
 .login {
@@ -251,14 +250,14 @@
     top: 13px;
 }
 
-.active {
+/* .active {
     width: 27px;
     height: 2px;
     background-color: #db192b;
     position: absolute;
     bottom: 0px;
     margin-left: 12px;
-}
+} */
 
 .news-bottom {
     padding-top: 8px;
