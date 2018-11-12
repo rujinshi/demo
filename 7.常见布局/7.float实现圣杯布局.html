@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>float实现圣杯布局</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      top: 0;
+    }
+
+    #header,
+    #footer {
+      height: 50px;
+      background-color: #ccc;
+    }
+
+    #container {
+      overflow: hidden;
+      height: 85%;
+      padding: 0 200px;
+    }
+
+    #container .son {
+      float: left;
+      height: 100%;
+    }
+
+    #center {
+      width: 100%;
+      background-color: skyblue;
+    }
+
+    #left {
+      width: 200px;
+      background-color: rgb(229, 151, 227);
+      position: relative;
+      margin-left: -100%;
+      left: -200px;
+    }
+
+    #right {
+      width: 200px;
+      background-color: rgb(199, 184, 142);
+      position: relative;
+      margin-left: -200px;
+      right: -200px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header">header</header>
+  <div id="container">
+    <div id="center" class="son">center</div>
+    <div id="left" class="son">left</div>
+    <div id="right" class="son">right</div>
+  </div>
+  <footer id="footer">footer</footer>
+</body>
+
+</html>
