@@ -41,7 +41,7 @@ flex 是 flex-grow、flex-shrink、flex-basis 的缩写，如果仅设置为一�
 
 ### 思路/原理
 
-将整个结构设为一行三列。整个 table100%宽，左右两列定宽，中间自适应。
+将整个结构设为一行三列。整个 table100%宽，左右两列定宽，中间自适应。父盒子设置 display:table;里面的子盒子设置 display:table-cell;
 
 ## 5.grid 实现三栏布局
 
@@ -59,4 +59,6 @@ flex 是 flex-grow、flex-shrink、flex-basis 的缩写，如果仅设置为一�
 
 ## 6.flex 实现圣杯布局
 
-## 7.
+## 7.float 实现圣杯布局
+
+## 8.双飞翼布局
