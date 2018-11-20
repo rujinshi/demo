@@ -1,21 +1,68 @@
 # 5.travel
+### 概述
+使用vue全家桶+webpack构建。首页轮播图使用Swiper插件实现，不同页面之间的切换使用Vue Router，城市页面与首页切换时，使用Vuex管理共享数据(城市)。非父子组件传值，实现字母表与城市名称列表的联动效果。Axois获取本地假数据实现前后端分离，多处使用Flex布局实现响应式。
+![](../img/bfcAuto.gif)
 
-> A Vue.js project
+### 优化
 
-## Build Setup
+1.轮播图在加载的时候有抖动感-->使用一个高度为0，设置padding-bottom来实现（padding-bottom为百分比的时候是以父元素的width为参照物）。
 
-``` bash
-# install dependencies
-npm install
+2.滚动字母表出发事件的时候，使用函数防抖，限制触发频率。
 
-# serve with hot reload at localhost:8080
-npm run dev
+3.使用Keep-Alive模式，避免每次两个页面切换的时候，都发送Ajax请求。
 
-# build for production with minification
-npm run build
+4.城市地点的存储使用localStorage，相对优化一点体验吧。
 
-# build for production and view the bundle analyzer report
-npm run build --report
+### 不足
+
+1.webpack了解的还很浅显
+
+2.首屏加载不是很快 感觉到有延迟 前端性能优化方面要学的还是很多
+
+3.vuex和vue router使用的不是很熟悉，只是稍微了解，并且只使用了当中的几个模块。
+
+--------------------------------
+
+1.移动端meta标签改写
+
+2.移动端1像素问题
+
+---------
+### 首页部分
+
+1.Swiper在慢速下有抖动感-->在外面包一个盒子
+```css
+width:100%;
+height:0;
+padding-bottom:图片的宽高比%
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+尤其要注意：当margin和padding是以百分比为单位时，它们是以**父元素width**为参照物的。
+
+2.Swiper下面元素直接设置样式是无效的，后来查了一下 **>>>** 能够穿透组件，这样设置样式就有效了。
+
+3.小图标的两页显示-->利用一个二维数组。将小图标的总个数Math.floor(index / 8)得到页数，然后通过计算属性返回。
+
+----------------------
+### 兄弟组件数据联动
+1.点击右侧字母-->向父组件传递当前字母的值-->父组件监听事件，接收传递的值-->向list页面传递当前的letter-->liet通过watch监听字母的变化-->通过ref属性获取那个字母的DOM -->ScrollElement
+
+2.使用了防抖
+
+--------------
+
+### 搜索城市
+
+1.使用v-model实现数据的双向绑定
+
+2.搜索的时候也用了防抖
+
+-------
+### 当前城市 热门城市与首页显示的城市数据共享
+
+1.Vuex实现 所有的城市状态都存在state中。只能够通过mutation的方式去改变状态。
+
+
+
+
+

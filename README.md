@@ -87,3 +87,25 @@ a {
 ## [4.响应式布局的 P2P 网站--预览效果](http://htmlpreview.github.io/?https://github.com/rujinshi/Demo_Front/blob/master/4.%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E7%9A%84P2P%E7%BD%91%E7%AB%99/index.html)
 
 通过 CSS3 中的[媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)实现三端适配的仿 P2P 金融网站
+
+## [5.vue全家桶实现仿去哪儿首页和城市页面](https://github.com/rujinshi/Demo_Front/tree/master/5.travel)
+
+使用vue全家桶+webpack构建。首页轮播图使用Swiper插件实现，不同页面之间的切换使用Vue Router(动态路由)，城市页面与首页切换时，使用Vuex管理共享数据(城市)。非父子组件传值，实现字母表与城市名称列表的联动效果。Axois获取本地假数据实现前后端分离，多处使用Flex布局实现响应式。
+
+### 优化
+
+1.轮播图在加载的时候有抖动感-->使用一个高度为0，设置padding-bottom来实现（padding-bottom为百分比的时候是以父元素的width为参照物）。
+
+2.滚动字母表出发事件的时候，使用函数防抖，限制触发频率。
+
+3.使用Keep-Alive模式，避免每次两个页面切换的时候，都发送Ajax请求。
+
+4.城市地点的存储使用localStorage，相对优化一点体验吧。
+
+### 不足
+
+1.webpack了解的还很浅显
+
+2.首屏加载不是很快 感觉到有延迟 前端性能优化方面要学的还是很多
+
+3.vuex和vue router使用的不是很熟悉，只是稍微了解，并且只使用了当中的几个模块。
