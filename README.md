@@ -1,7 +1,6 @@
 # 学习过程中的 DEMO
 
-## [1.仿京东首页]-----[预览效果](https://htmlpreview.github.io/?https://github.com/rujinshi/Demo_Front/blob/master/1.%E4%BB%BF%E4%BA%AC%E4%B8%9C%E9%A6%96%E9%A1%B5_%E9%9D%99%E6%80%81/index.html#)
-
+## 1.仿京东首页
 此 DEMO 为初接触 H5+CSS 做的仿京东首页，由于技术栈的限制，此页面为静态页面。通过此 DEMO 对以下知识点加深了认识：
 
 - 网页的制作流程；
@@ -28,8 +27,7 @@ a {
 
 - 结合 transition 和 transform 实现了一些过渡效果，增加了视觉体验性。CSS3 新特性。
 
-## [2.仿百度搜索框---效果预览](http://htmlpreview.github.io/?https://github.com/rujinshi/Demo_Front/blob/master/2.%E4%BB%BF%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2%E6%A1%86/index.html)
-
+## 2.仿百度搜索框
 输入任何关键字，即可跳转百度，对关键字进行搜索。键盘上下选择、鼠标点击候选项以及点击搜索按钮都可以跳转搜索。
 
 ### 实现原理
@@ -69,7 +67,7 @@ a {
   searchResult.innerHTML = str;
   ```
 
-## [3.原生 JS 实现轮播图--预览效果](http://htmlpreview.github.io/?https://github.com/rujinshi/Demo_Front/blob/banner/3.%E4%BB%BF%E5%B0%8F%E7%B1%B3%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E8%BD%AE%E6%92%AD%E5%9B%BE/index.html)
+## 3.原生 JS 实现轮播图
 
 本轮播图非使用移动像素来实现，而是通过设置图片透明度 opacity 来实现。
 
@@ -84,9 +82,9 @@ a {
 
 - 刚开始加载时会出现一种乱码的感觉-----可能跟图片大小有关。本地端预览时不会出现这样的状况。
 
-## [4.响应式布局的 P2P 网站--预览效果](http://htmlpreview.github.io/?https://github.com/rujinshi/Demo_Front/blob/master/4.%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%E7%9A%84P2P%E7%BD%91%E7%AB%99/index.html)
+## 4.响应式布局的 P2P 网站--预览效果
 
-通过 CSS3 中的[媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)实现三端适配的仿 P2P 金融网站
+通过 CSS3 中的[媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)实现
 
 ## [5.vue全家桶实现仿去哪儿首页和城市页面](https://github.com/rujinshi/Demo_Front/tree/master/5.travel)
 
